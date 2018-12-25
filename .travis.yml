@@ -30,8 +30,10 @@ addons:
     branch:
       name: "$TRAVIS_CURRENT_BRANCH"
 
-script:
+install:
   - npm install --ignore-scripts
+
+script:
   - npm test
   - npm run coveralls
   - sonar-scanner
