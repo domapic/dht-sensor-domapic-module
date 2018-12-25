@@ -4174,6 +4174,11 @@
         "sinon-chai": "3.2.0"
       }
     },
+    "mockery": {
+      "version": "2.1.0",
+      "resolved": "https://registry.npmjs.org/mockery/-/mockery-2.1.0.tgz",
+      "integrity": "sha512-9VkOmxKlWXoDO/h1jDZaS4lH33aWfRiJiNT/tKj+8OGzrcFDLo8d0syGdbsc3Bc4GvRXPb+NMMvojotmuGJTvA=="
+    },
     "moment": {
       "version": "2.23.0",
       "resolved": "https://registry.npmjs.org/moment/-/moment-2.23.0.tgz",
@@ -4373,6 +4378,21 @@
       "version": "2.0.0",
       "resolved": "https://registry.npmjs.org/nocache/-/nocache-2.0.0.tgz",
       "integrity": "sha1-ICtIAhoMTL3i34DeFaF0Q8i0OYA="
+    },
+    "node-dht-sensor": {
+      "version": "0.0.34",
+      "resolved": "https://registry.npmjs.org/node-dht-sensor/-/node-dht-sensor-0.0.34.tgz",
+      "integrity": "sha512-dYyNOdIEBm4v34OjGhrz3JJzXXZ0OTtvaK3fPWo7yFhUkcBFF4THfBf5kxJ8IfQ/StwP5xqFkFP4M1xZM1CtBg==",
+      "requires": {
+        "nan": "2.8.0"
+      },
+      "dependencies": {
+        "nan": {
+          "version": "2.8.0",
+          "resolved": "https://registry.npmjs.org/nan/-/nan-2.8.0.tgz",
+          "integrity": "sha1-7XFfP+neArV6XmJS2QqWZ14fCFo="
+        }
+      }
     },
     "nopt": {
       "version": "3.0.6",
