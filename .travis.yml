@@ -31,6 +31,7 @@ addons:
       name: "$TRAVIS_CURRENT_BRANCH"
 
 script:
+  - npm install --ignore-scripts
   - npm test
   - npm run coveralls
   - sonar-scanner
