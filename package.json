@@ -1,0 +1,48 @@
+{
+  "name": "dht-sensor-domapic-module",
+  "version": "1.0.0",
+  "description": "Domapic module for controlling a dht sensor in a Raspberry Pi",
+  "main": "server.js",
+  "bin": {
+    "dht-sensor": "./bin/dht-sensor"
+  },
+  "scripts": {
+    "test": "narval",
+    "coveralls": "cat ./.coverage/lcov.info | coveralls",
+    "dht-sensor": "./bin/dht-sensor"
+  },
+  "dependencies": {
+    "domapic-service": "1.0.0-alpha.5"
+  },
+  "devDependencies": {
+    "coveralls": "3.0.2",
+    "narval": "2.2.1",
+    "request": "2.88.0",
+    "request-promise": "4.2.2"
+  },
+  "files": [
+    "/lib",
+    "/bin",
+    "server.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javierbrea/dht-sensor-domapic-module.git"
+  },
+  "keywords": [
+    "domapic",
+    "sensor",
+    "temperature",
+    "humidity",
+    "iot",
+    "api",
+    "domotic",
+    "raspberry"
+  ],
+  "author": "Javier Brea",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/javierbrea/dht-sensor-domapic-module/issues"
+  },
+  "homepage": "https://github.com/javierbrea/dht-sensor-domapic-module#readme"
+}

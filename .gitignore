@@ -1,0 +1,8 @@
+/.coverage
+.npmrc
+.scannerwork
+node_modules
+npm-debug.log
+/.test
+/.narval
+/.domapic
