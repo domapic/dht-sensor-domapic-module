@@ -21,14 +21,6 @@ test.describe('Sensor', () => {
     clearInterval(sensor._interval)
   })
 
-  test.describe('readValues method', () => {
-    test.it('should call to read sensor values, passing refreshValues as callback', () => {
-      sandbox.spy(sensor._eventEmitter, 'emit')
-      sensor.readValues()
-      test.expect(sensor._eventEmitter.emit).to.have.been.called()
-    })
-  })
-
   test.describe('refreshValues method', () => {
     test.it('should trace when receives an error', () => {
       sensor.refreshValues(new Error(), 10, 20)
@@ -37,32 +29,32 @@ test.describe('Sensor', () => {
 
     test.it('should emit a temperature event when it increase more than defined step', () => {
       sandbox.spy(sensor._eventEmitter, 'emit')
-      sensor.refreshValues(null, 10, 20)
-      test.expect(sensor._eventEmitter.emit).to.have.been.calledWith('temperature', 10)
+      sensor.refreshValues(null, 25, 20)
+      test.expect(sensor._eventEmitter.emit).to.have.been.calledWith('temperature', 25)
     })
 
     test.it('should emit a temperature event when it decrease more than defined step', () => {
       sandbox.spy(sensor._eventEmitter, 'emit')
-      sensor.refreshValues(null, -4, 20)
-      test.expect(sensor._eventEmitter.emit).to.have.been.calledWith('temperature', -4)
+      sensor.refreshValues(null, 18, 20)
+      test.expect(sensor._eventEmitter.emit).to.have.been.calledWith('temperature', 18)
     })
 
     test.it('should emit an humidity event when it increase more than defined step', () => {
       sandbox.spy(sensor._eventEmitter, 'emit')
-      sensor.refreshValues(null, 1, 10)
-      test.expect(sensor._eventEmitter.emit).to.have.been.calledWith('humidity', 10)
+      sensor.refreshValues(null, 1, 58)
+      test.expect(sensor._eventEmitter.emit).to.have.been.calledWith('humidity', 58)
     })
 
     test.it('should emit an humidity event when it decrease more than defined step', () => {
       sandbox.spy(sensor._eventEmitter, 'emit')
-      sensor.refreshValues(null, 1, -5)
-      test.expect(sensor._eventEmitter.emit).to.have.been.calledWith('humidity', -5)
+      sensor.refreshValues(null, 1, 45)
+      test.expect(sensor._eventEmitter.emit).to.have.been.calledWith('humidity', 45)
     })
 
     test.it('should not emit events if there is no humidity nor temperature increase', () => {
       sandbox.spy(sensor._eventEmitter, 'emit')
-      sensor.refreshValues(null, 1, 1)
-      test.expect(sensor._eventEmitter.emit).to.not.have.been.called()
+      sensor.refreshValues(null, 21, 50)
+      test.expect(sensor._eventEmitter.emit.callCount).to.equal(0)
     })
   })
 
