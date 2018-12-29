@@ -1,1 +1,40 @@
-[]
+[
+  {
+    "pluginPackageName": "homebridge-domapic-plugin",
+    "config": {
+      "accessories": [
+        {
+          "accessory": "TemperatureSensor",
+          "name": "Temperature sensor",
+          "characteristics": [
+            {
+              "characteristic": "CurrentTemperature",
+              "get": {
+                "ability": "temperature"
+              },
+              "notify": {
+                "ability": "temperature"
+              }
+            }
+          ]
+        },
+        {
+          "accessory": "HumiditySensor",
+          "name": "Humidity sensor",
+          "characteristics": [
+            {
+              "characteristic": "CurrentRelativeHumidity",
+              "get": {
+                "ability": "humidity"
+              },
+              "notify": {
+                "ability": "humidity"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
+
