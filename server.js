@@ -53,7 +53,9 @@ domapic.createModule({
     [HUMIDITY_NAME]: {
       description: HUMIDITY_STATE,
       data: {
-        type: 'number'
+        type: 'number',
+        minimum: 0,
+        maximum: 100
       },
       state: {
         description: HUMIDITY_STATE,
