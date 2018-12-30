@@ -12,7 +12,9 @@
     "dht-sensor": "./bin/dht-sensor"
   },
   "dependencies": {
-    "domapic-service": "1.0.0-alpha.5"
+    "domapic-service": "1.0.0-alpha.5",
+    "mockery": "2.1.0",
+    "node-dht-sensor": "0.0.34"
   },
   "devDependencies": {
     "coveralls": "3.0.2",
