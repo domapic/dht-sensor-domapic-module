@@ -10,6 +10,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
-## [1.0.0] - 2018-12-25
+## [1.0.0] - 2018-12-30
 ### Added
 - First release
