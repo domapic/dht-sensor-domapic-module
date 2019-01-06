@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
+## [1.1.0] - 2019-01-06
+### Changed
+- Upgrade domapic-service version
+
 ## [1.0.0] - 2018-12-30
 ### Added
 - First release
