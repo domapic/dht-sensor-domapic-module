@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 ## [1.1.1] - 2019-03-05
-### Changed
+### Fixed
 - Events was not being emitted when change was equal to eventStep option. Only was being emitted when it was upper than defined eventStep.
 
 ## [1.1.0] - 2019-01-06
