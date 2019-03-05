@@ -12,7 +12,7 @@ test.describe('Sensor', () => {
   test.beforeEach(async () => {
     sandbox = test.sinon.createSandbox()
     domapic = new DomapicMocks()
-    sensor = new Sensor(11, 2, 3000, 2, domapic.stubs.module.tracer)
+    sensor = new Sensor(11, 2, 3000, 1, domapic.stubs.module.tracer)
   })
 
   test.afterEach(() => {
@@ -27,10 +27,22 @@ test.describe('Sensor', () => {
       test.expect(domapic.stubs.module.tracer.error).to.have.been.called()
     })
 
+    test.it('should emit a temperature event when it increase defined step', () => {
+      sandbox.spy(sensor._eventEmitter, 'emit')
+      sensor.refreshValues(null, 22, 20)
+      test.expect(sensor._eventEmitter.emit).to.have.been.calledWith('temperature', 22)
+    })
+
     test.it('should emit a temperature event when it increase more than defined step', () => {
       sandbox.spy(sensor._eventEmitter, 'emit')
       sensor.refreshValues(null, 25, 20)
       test.expect(sensor._eventEmitter.emit).to.have.been.calledWith('temperature', 25)
+    })
+
+    test.it('should emit a temperature event when it decrease defined step', () => {
+      sandbox.spy(sensor._eventEmitter, 'emit')
+      sensor.refreshValues(null, 20, 20)
+      test.expect(sensor._eventEmitter.emit).to.have.been.calledWith('temperature', 20)
     })
 
     test.it('should emit a temperature event when it decrease more than defined step', () => {
@@ -39,10 +51,22 @@ test.describe('Sensor', () => {
       test.expect(sensor._eventEmitter.emit).to.have.been.calledWith('temperature', 18)
     })
 
+    test.it('should emit an humidity event when it increase defined step', () => {
+      sandbox.spy(sensor._eventEmitter, 'emit')
+      sensor.refreshValues(null, 1, 51)
+      test.expect(sensor._eventEmitter.emit).to.have.been.calledWith('humidity', 51)
+    })
+
     test.it('should emit an humidity event when it increase more than defined step', () => {
       sandbox.spy(sensor._eventEmitter, 'emit')
       sensor.refreshValues(null, 1, 58)
       test.expect(sensor._eventEmitter.emit).to.have.been.calledWith('humidity', 58)
+    })
+
+    test.it('should emit an humidity event when it decrease defined step', () => {
+      sandbox.spy(sensor._eventEmitter, 'emit')
+      sensor.refreshValues(null, 1, 49)
+      test.expect(sensor._eventEmitter.emit).to.have.been.calledWith('humidity', 49)
     })
 
     test.it('should emit an humidity event when it decrease more than defined step', () => {
