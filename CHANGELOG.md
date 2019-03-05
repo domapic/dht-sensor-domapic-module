@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 ### Removed
 
+## [1.1.1] - 2019-03-05
+### Changed
+- Events was not being emitted when change was equal to eventStep option. Only was being emitted when it was upper than defined eventStep.
+
 ## [1.1.0] - 2019-01-06
 ### Changed
 - Upgrade domapic-service version. Connection will not work with domapic-controller versions lower than 1.0.0-alpha.14.
